@@ -1,64 +1,7 @@
-import { useState } from "react";
-import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { contactFormSchema, type ContactForm } from "@shared/schema";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import {
-  Form,
-  FormControl,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
-} from "@/components/ui/form";
 import { Card } from "@/components/ui/card";
-import { Mail, Phone, MapPin, Loader2, CheckCircle2, AlertCircle } from "lucide-react";
+import { Mail, Clock, MessageCircle } from "lucide-react";
 
 export default function ContactSection() {
-  const [submitStatus, setSubmitStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
-
-  const form = useForm<ContactForm>({
-    resolver: zodResolver(contactFormSchema),
-    defaultValues: {
-      name: "",
-      email: "",
-      phone: "",
-      message: "",
-    },
-  });
-
-  const onSubmit = async (data: ContactForm) => {
-    setSubmitStatus("loading");
-    
-    try {
-      const response = await fetch("/api/contact", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
-      });
-
-      if (!response.ok) {
-        throw new Error("Error al enviar el mensaje");
-      }
-
-      setSubmitStatus("success");
-      form.reset();
-      
-      setTimeout(() => {
-        setSubmitStatus("idle");
-      }, 5000);
-    } catch (error) {
-      setSubmitStatus("error");
-      setTimeout(() => {
-        setSubmitStatus("idle");
-      }, 5000);
-    }
-  };
-
   return (
     <section id="contacto" className="py-20 md:py-32 bg-muted/30">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -67,178 +10,62 @@ export default function ContactSection() {
             Contacto
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            ¿Tienes un proyecto en mente? Cuéntanos cómo podemos ayudarte
+            ¿Tienes un proyecto en mente? Estamos aquí para ayudarte
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          <div>
-            <Form {...form}>
-              <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-                <FormField
-                  control={form.control}
-                  name="name"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>Nombre</FormLabel>
-                      <FormControl>
-                        <Input
-                          placeholder="Tu nombre completo"
-                          {...field}
-                          data-testid="input-name"
-                        />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-
-                <FormField
-                  control={form.control}
-                  name="email"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>Email</FormLabel>
-                      <FormControl>
-                        <Input
-                          type="email"
-                          placeholder="tu@email.com"
-                          {...field}
-                          data-testid="input-email"
-                        />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-
-                <FormField
-                  control={form.control}
-                  name="phone"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>Teléfono (opcional)</FormLabel>
-                      <FormControl>
-                        <Input
-                          type="tel"
-                          placeholder="+34 600 000 000"
-                          {...field}
-                          data-testid="input-phone"
-                        />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-
-                <FormField
-                  control={form.control}
-                  name="message"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>Mensaje</FormLabel>
-                      <FormControl>
-                        <Textarea
-                          placeholder="Cuéntanos sobre tu proyecto..."
-                          className="min-h-32 resize-none"
-                          {...field}
-                          data-testid="input-message"
-                        />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-
-                {submitStatus === "success" && (
-                  <div className="flex items-center gap-2 text-green-600 bg-green-50 dark:bg-green-950/20 p-3 rounded-md" data-testid="message-success">
-                    <CheckCircle2 className="h-5 w-5" />
-                    <p className="text-sm">¡Mensaje enviado correctamente! Te contactaremos pronto.</p>
-                  </div>
-                )}
-
-                {submitStatus === "error" && (
-                  <div className="flex items-center gap-2 text-destructive bg-destructive/10 p-3 rounded-md" data-testid="message-error">
-                    <AlertCircle className="h-5 w-5" />
-                    <p className="text-sm">Error al enviar el mensaje. Por favor, inténtalo de nuevo.</p>
-                  </div>
-                )}
-
-                <Button
-                  type="submit"
-                  size="lg"
-                  className="w-full"
-                  disabled={submitStatus === "loading"}
-                  data-testid="button-submit"
-                >
-                  {submitStatus === "loading" ? (
-                    <>
-                      <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                      Enviando...
-                    </>
-                  ) : (
-                    "Enviar Mensaje"
-                  )}
-                </Button>
-              </form>
-            </Form>
-          </div>
-
-          <div className="space-y-6">
-            <Card className="p-8" data-testid="card-contact-info">
-              <h3 className="font-display font-semibold text-2xl text-foreground mb-6">
-                Información de Contacto
+        <div className="max-w-4xl mx-auto">
+          <Card className="p-8 md:p-12" data-testid="card-contact-info">
+            <div className="text-center mb-10">
+              <h3 className="font-display font-semibold text-2xl md:text-3xl text-foreground mb-4">
+                Hablemos de tu proyecto
               </h3>
+              <p className="text-muted-foreground">
+                Ponte en contacto con nosotros y te responderemos lo antes posible
+              </p>
+            </div>
 
-              <div className="space-y-6">
-                <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
-                    <Mail className="h-5 w-5 text-primary" />
-                  </div>
-                  <div>
-                    <p className="font-medium text-foreground mb-1">Email</p>
-                    <a
-                      href="mailto:admin@adfypro.com"
-                      className="text-muted-foreground hover:text-primary transition-colors"
-                      data-testid="link-email"
-                    >
-                      admin@adfypro.com
-                    </a>
-                  </div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div className="text-center" data-testid="contact-email">
+                <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
+                  <Mail className="h-8 w-8 text-primary" />
                 </div>
-
-                <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
-                    <Phone className="h-5 w-5 text-primary" />
-                  </div>
-                  <div>
-                    <p className="font-medium text-foreground mb-1">Horario de Atención</p>
-                    <p className="text-muted-foreground">Lunes a Viernes</p>
-                    <p className="text-muted-foreground">9:00 - 18:00h</p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
-                    <MapPin className="h-5 w-5 text-primary" />
-                  </div>
-                  <div>
-                    <p className="font-medium text-foreground mb-1">Respuesta</p>
-                    <p className="text-muted-foreground">
-                      Te responderemos en menos de 24 horas laborables
-                    </p>
-                  </div>
-                </div>
+                <h4 className="font-semibold text-foreground mb-2">Email</h4>
+                <a
+                  href="mailto:admin@adfypro.com"
+                  className="text-primary hover:text-primary/80 transition-colors font-medium text-lg"
+                  data-testid="link-email"
+                >
+                  admin@adfypro.com
+                </a>
               </div>
 
-              <div className="mt-8 pt-8 border-t border-border">
-                <p className="text-sm text-muted-foreground">
-                  Tu información está segura con nosotros. Solo la utilizaremos para
-                  responder a tu consulta.
-                </p>
+              <div className="text-center" data-testid="contact-hours">
+                <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
+                  <Clock className="h-8 w-8 text-primary" />
+                </div>
+                <h4 className="font-semibold text-foreground mb-2">Horario de Atención</h4>
+                <p className="text-muted-foreground">Lunes a Viernes</p>
+                <p className="text-muted-foreground font-medium">9:00 - 18:00h</p>
               </div>
-            </Card>
-          </div>
+
+              <div className="text-center" data-testid="contact-response">
+                <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
+                  <MessageCircle className="h-8 w-8 text-primary" />
+                </div>
+                <h4 className="font-semibold text-foreground mb-2">Tiempo de Respuesta</h4>
+                <p className="text-muted-foreground">Te responderemos en</p>
+                <p className="text-muted-foreground font-medium">menos de 24h laborables</p>
+              </div>
+            </div>
+
+            <div className="mt-10 pt-10 border-t border-border text-center">
+              <p className="text-muted-foreground">
+                Escríbenos a <a href="mailto:admin@adfypro.com" className="text-primary hover:text-primary/80 transition-colors font-medium" data-testid="link-email-footer">admin@adfypro.com</a> y cuéntanos tu proyecto.
+                Estaremos encantados de ayudarte.
+              </p>
+            </div>
+          </Card>
         </div>
       </div>
     </section>
