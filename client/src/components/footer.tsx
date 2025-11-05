@@ -1,3 +1,5 @@
+import logoImage from "@assets/generated_images/ADFYPRO_horizontal_logo_181b92e8.png";
+
 export default function Footer() {
   const currentYear = new Date().getFullYear();
 
@@ -16,9 +18,12 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
           <div>
-            <h3 className="font-display font-bold text-2xl mb-4" data-testid="text-footer-brand">
-              ADFYPRO
-            </h3>
+            <img 
+              src={logoImage} 
+              alt="ADFYPRO Logo" 
+              className="h-10 w-auto object-contain mb-4 brightness-0 invert dark:brightness-100 dark:invert-0"
+              data-testid="img-footer-logo"
+            />
             <p className="text-secondary-foreground/80 text-sm leading-relaxed">
               Agencia especializada en intermediación comercial, publicidad, marketing y
               gestión tecnológica.

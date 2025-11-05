@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
+import logoImage from "@assets/generated_images/ADFYPRO_horizontal_logo_181b92e8.png";
 
 interface NavigationProps {
   activeSection: string;
@@ -52,10 +53,14 @@ export default function Navigation({ activeSection }: NavigationProps) {
         <div className="flex items-center justify-between h-20">
           <button
             onClick={() => scrollToSection("hero")}
-            className="text-2xl font-display font-bold text-foreground hover:text-primary transition-colors"
+            className="flex items-center gap-3 hover:opacity-80 transition-opacity"
             data-testid="link-home"
           >
-            ADFYPRO
+            <img 
+              src={logoImage} 
+              alt="ADFYPRO Logo" 
+              className="h-10 sm:h-12 w-auto object-contain"
+            />
           </button>
 
           <div className="hidden md:flex items-center gap-8">
