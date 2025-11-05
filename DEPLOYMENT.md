@@ -39,6 +39,18 @@ git push -u origin main
 
 6. Click en "Save and Deploy"
 
+### ⚠️ Importante: Configuración SPA para React
+
+El proyecto ya incluye un archivo `client/public/_redirects` que es **esencial** para que la aplicación React funcione correctamente en Cloudflare Pages:
+
+```
+/* /index.html 200
+```
+
+Este archivo se copia automáticamente a `dist/_redirects` durante el build y le dice a Cloudflare Pages que redirija todas las rutas a `index.html`, permitiendo que React maneje la navegación del lado del cliente.
+
+**Sin este archivo verás errores 404** al navegar directamente a URLs o al recargar la página.
+
 ## Paso 3: Configurar Variables de Entorno
 
 En la configuración de tu proyecto en Cloudflare Pages:

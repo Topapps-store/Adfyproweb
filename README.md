@@ -78,6 +78,12 @@ SMTP_PASS=tu-app-password-generada
 
 Ver la guía completa en [DEPLOYMENT.md](./DEPLOYMENT.md)
 
+### ⚠️ Importante: Evitar Error 404
+
+El proyecto incluye `client/public/_redirects` que es **esencial** para que funcione en Cloudflare Pages. Este archivo se copia automáticamente durante el build y soluciona errores 404.
+
+**Si ves un error 404 después del deployment**, lee [SOLUCION_ERROR_404.md](./SOLUCION_ERROR_404.md) para aplicar la solución.
+
 ### Quick Start
 
 ```bash

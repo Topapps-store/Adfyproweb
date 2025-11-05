@@ -15,15 +15,15 @@ Web corporativa estática para ADFYPRO, una agencia de intermediación comercial
 - **Dark mode ready**: Soporte completo para tema oscuro
 
 ### Backend
-- **API de contacto**: Endpoint POST `/api/contact` que envía emails
-- **Validación con Zod**: Schemas compartidos entre frontend y backend
-- **Nodemailer**: Envío de emails SMTP (configurado para Gmail)
+- **Sin backend**: Página completamente estática (sin formularios ni APIs)
+- **Solo frontend**: Toda la funcionalidad es del lado del cliente
+- **Deployment optimizado**: Para Cloudflare Pages sin necesidad de funciones serverless
 
 ### Secciones del Sitio
 1. **Hero**: Portada impactante con CTA
 2. **Servicios**: 3 servicios principales (Intermediación, Publicidad, Tecnología)
 3. **Nosotros**: Proceso de trabajo en 3 pasos
-4. **Contacto**: Formulario funcional con validación
+4. **Contacto**: Información de contacto estática (email visible como texto)
 5. **Footer**: Enlaces rápidos y contacto
 
 ## Stack Tecnológico
@@ -68,15 +68,7 @@ Web corporativa estática para ADFYPRO, una agencia de intermediación comercial
 
 ## Variables de Entorno
 
-El proyecto requiere configurar SMTP para el formulario de contacto:
-
-```env
-SMTP_HOST=smtp.gmail.com
-SMTP_PORT=587
-SMTP_USER=tu-email@gmail.com
-SMTP_PASS=tu-app-password
-SESSION_SECRET=string-aleatorio-seguro
-```
+**No se requieren variables de entorno** - El sitio es completamente estático sin backend.
 
 ## Desarrollo Local
 
@@ -132,12 +124,25 @@ Ver guía completa en `DEPLOYMENT.md`
 
 ## ✅ PROYECTO COMPLETADO Y LISTO PARA DEPLOYMENT
 
-El sitio está **100% funcional** y listo para ser desplegado en www.adfypro.com.
+El sitio está **100% funcional** como página estática y listo para ser desplegado en www.adfypro.com.
+
+### Cambios Recientes
+- ✅ **Logo y Favicon**: Generados e integrados profesionalmente
+- ✅ **Formulario eliminado**: Convertido a página 100% estática (sin backend)
+- ✅ **Sección Contacto**: Ahora muestra información de contacto como texto estático
+- ✅ **Fix Error 404**: Añadido archivo `_redirects` para Cloudflare Pages
+
+### Solución al Error 404 en Cloudflare Pages
+El archivo `client/public/_redirects` contiene la configuración necesaria para que React funcione correctamente en Cloudflare Pages:
+```
+/* /index.html 200
+```
+
+Este archivo se copia automáticamente a `dist/public/_redirects` durante el build.
 
 ### Próximos Pasos
-1. Configurar credenciales SMTP en `.env` (ver INSTRUCCIONES_FINALES.md)
-2. Subir código a GitHub
-3. Conectar con Cloudflare Pages
-4. Configurar dominio www.adfypro.com
+1. Subir cambios a GitHub (`git add . && git commit && git push`)
+2. Cloudflare Pages hará rebuild automático
+3. El error 404 desaparecerá y el sitio funcionará perfectamente
 
-Ver **INSTRUCCIONES_FINALES.md** para la guía completa paso a paso.
+Ver **SOLUCION_ERROR_404.md** para instrucciones detalladas paso a paso.
