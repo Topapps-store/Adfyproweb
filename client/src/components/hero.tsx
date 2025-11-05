@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ChevronDown } from "lucide-react";
-import heroImage from "@assets/generated_images/Hero_office_collaboration_dcd783c8.png";
+import heroImage from "@assets/generated_images/Hero_office_collaboration_dcd783c8.webp";
 
 export default function Hero() {
   const scrollToContact = () => {

@@ -1,6 +1,6 @@
-import partnershipImage from "@assets/generated_images/Business_partnership_handshake_8fc9224c.png";
-import marketingImage from "@assets/generated_images/Digital_marketing_technology_3413e7e3.png";
-import strategyImage from "@assets/generated_images/Strategy_planning_session_8a0d4faf.png";
+import partnershipImage from "@assets/generated_images/Business_partnership_handshake_8fc9224c.webp";
+import marketingImage from "@assets/generated_images/Digital_marketing_technology_3413e7e3.webp";
+import strategyImage from "@assets/generated_images/Strategy_planning_session_8a0d4faf.webp";
 
 export default function About() {
   const processes = [
@@ -57,6 +57,7 @@ export default function About() {
                 <img
                   src={process.image}
                   alt={process.title}
+                  loading="lazy"
                   className="rounded-lg shadow-lg w-full h-auto object-cover"
                   data-testid={`img-process-${index}`}
                 />

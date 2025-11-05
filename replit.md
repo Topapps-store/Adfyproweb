@@ -131,6 +131,7 @@ El sitio está **100% funcional** como página estática y listo para ser desple
 - ✅ **Formulario eliminado**: Convertido a página 100% estática (sin backend)
 - ✅ **Sección Contacto**: Ahora muestra información de contacto como texto estático
 - ✅ **Fix Error 404**: Añadido archivo `_redirects` para Cloudflare Pages
+- ✅ **Optimización de Imágenes**: Convertidas a WebP (94% más ligeras - de 6.1MB a 364KB)
 
 ### Solución al Error 404 en Cloudflare Pages
 
