@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
-import logoImage from "@assets/generated_images/ADFYPRO_horizontal_logo_181b92e8.png";
+import logoImage from "@assets/generated_images/ADFYPRO_modern_logo_horizontal_444aa74c.png";
 
 interface NavigationProps {
   activeSection: string;
@@ -71,7 +71,9 @@ export default function Navigation({ activeSection }: NavigationProps) {
                 className={`text-sm font-medium transition-colors ${
                   activeSection === item.id
                     ? "text-primary"
-                    : "text-foreground hover:text-primary"
+                    : isScrolled 
+                      ? "text-foreground hover:text-primary"
+                      : "text-white hover:text-primary"
                 }`}
                 data-testid={`link-${item.id}`}
               >
@@ -83,7 +85,7 @@ export default function Navigation({ activeSection }: NavigationProps) {
           <Button
             variant="ghost"
             size="icon"
-            className="md:hidden"
+            className={`md:hidden ${!isScrolled && "text-white"}`}
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             data-testid="button-menu-toggle"
           >

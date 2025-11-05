@@ -127,7 +127,9 @@ Ver guía completa en `DEPLOYMENT.md`
 El sitio está **100% funcional** como página estática y listo para ser desplegado en www.adfypro.com.
 
 ### Cambios Recientes
-- ✅ **Logo y Favicon**: Generados e integrados profesionalmente
+- ✅ **Nuevo Logo Moderno**: Diseño profesional actualizado con colores azules corporativos
+- ✅ **Filtro Azul Oscuro en Hero**: Mejora la legibilidad del texto sobre la imagen
+- ✅ **Navegación Mejorada**: Texto blanco cuando no está scrolled, mantiene color primary en hover/activo
 - ✅ **Formulario eliminado**: Convertido a página 100% estática (sin backend)
 - ✅ **Sección Contacto**: Ahora muestra información de contacto como texto estático
 - ✅ **Fix Error 404**: Añadido archivo `_redirects` para Cloudflare Pages

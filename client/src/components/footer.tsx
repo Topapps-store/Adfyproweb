@@ -1,4 +1,4 @@
-import logoImage from "@assets/generated_images/ADFYPRO_horizontal_logo_181b92e8.png";
+import logoImage from "@assets/generated_images/ADFYPRO_modern_logo_horizontal_444aa74c.png";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
