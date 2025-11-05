@@ -35,7 +35,7 @@ git push -u origin main
    - **Production branch**: `main`
    - **Framework preset**: `None` (o Vite si está disponible)
    - **Build command**: `npm run build`
-   - **Build output directory**: `dist`
+   - **Build output directory**: `dist/public` ⭐ **IMPORTANTE**
 
 6. Click en "Save and Deploy"
 

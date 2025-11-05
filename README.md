@@ -104,7 +104,7 @@ git push -u origin main
 # - Create > Connect to Git
 # - Selecciona el repositorio
 # - Build command: npm run build
-# - Build output: dist
+# - Build output: dist/public (⭐ IMPORTANTE)
 ```
 
 ## 📁 Estructura del Proyecto

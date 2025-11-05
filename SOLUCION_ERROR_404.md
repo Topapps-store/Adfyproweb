@@ -2,7 +2,17 @@
 
 ## El Problema
 
-Si ves un error **HTTP ERROR 404** al acceder a tu sitio en Cloudflare Pages (ejemplo: `https://tu-proyecto.pages.dev`), es porque Cloudflare necesita configuración especial para aplicaciones React (SPAs).
+Si ves un error **HTTP ERROR 404** al acceder a tu sitio en Cloudflare Pages (ejemplo: `https://tu-proyecto.pages.dev`), hay **DOS causas posibles**:
+
+### Causa 1: Build Output Directory Incorrecto ⭐ **MÁS COMÚN**
+
+Tu Cloudflare Pages está configurado para leer desde `dist` pero los archivos se generan en `dist/public`.
+
+**Solución**: Ve a [FIX_CLOUDFLARE_CONFIG.md](./FIX_CLOUDFLARE_CONFIG.md) y sigue los pasos para cambiar el output directory a `dist/public`.
+
+### Causa 2: Falta el archivo _redirects
+
+El archivo `_redirects` es necesario para que React funcione correctamente en Cloudflare Pages (SPAs).
 
 ## ✅ La Solución (Ya está implementada)
 

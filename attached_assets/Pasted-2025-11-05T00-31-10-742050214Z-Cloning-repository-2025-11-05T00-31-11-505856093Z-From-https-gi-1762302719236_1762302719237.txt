@@ -1,0 +1,72 @@
+2025-11-05T00:31:10.742050214Z	Cloning repository...
+2025-11-05T00:31:11.505856093Z	From https://github.com/Topapps-store/Adfyproweb
+2025-11-05T00:31:11.505887991Z	 * branch            c6c7ff7dd738d5dc3754d9e2967886e34ff423fd -> FETCH_HEAD
+2025-11-05T00:31:11.505894607Z	
+2025-11-05T00:31:11.560109479Z	HEAD is now at c6c7ff7 Address 404 errors by configuring static site redirects for Cloudflare Pages
+2025-11-05T00:31:11.560560833Z	
+2025-11-05T00:31:11.638610371Z	
+2025-11-05T00:31:11.639129778Z	Using v2 root directory strategy
+2025-11-05T00:31:11.659048425Z	Success: Finished cloning repository files
+2025-11-05T00:31:13.613523695Z	Checking for configuration in a Wrangler configuration file (BETA)
+2025-11-05T00:31:13.614001944Z	
+2025-11-05T00:31:14.710647457Z	No wrangler.toml file found. Continuing.
+2025-11-05T00:31:14.777797922Z	Detected the following tools from environment: npm@10.9.2, nodejs@22.16.0
+2025-11-05T00:31:14.778189746Z	Installing project dependencies: npm clean-install --progress=false
+2025-11-05T00:31:19.279502611Z	npm warn deprecated @esbuild-kit/esm-loader@2.6.5: Merged into tsx: https://tsx.is
+2025-11-05T00:31:19.333931094Z	npm warn deprecated @esbuild-kit/core-utils@3.3.2: Merged into tsx: https://tsx.is
+2025-11-05T00:31:24.041410997Z	
+2025-11-05T00:31:24.041934568Z	added 560 packages, and audited 561 packages in 9s
+2025-11-05T00:31:24.04226087Z	
+2025-11-05T00:31:24.042643429Z	66 packages are looking for funding
+2025-11-05T00:31:24.042806763Z	  run `npm fund` for details
+2025-11-05T00:31:24.062935593Z	
+2025-11-05T00:31:24.063172616Z	8 vulnerabilities (3 low, 5 moderate)
+2025-11-05T00:31:24.063191005Z	
+2025-11-05T00:31:24.063310264Z	To address issues that do not require attention, run:
+2025-11-05T00:31:24.063821925Z	  npm audit fix
+2025-11-05T00:31:24.064190399Z	
+2025-11-05T00:31:24.064296272Z	To address all issues (including breaking changes), run:
+2025-11-05T00:31:24.064377452Z	  npm audit fix --force
+2025-11-05T00:31:24.064537492Z	
+2025-11-05T00:31:24.064679329Z	Run `npm audit` for details.
+2025-11-05T00:31:24.093182554Z	Executing user command: npm run build
+2025-11-05T00:31:24.465836285Z	
+2025-11-05T00:31:24.466155853Z	> rest-express@1.0.0 build
+2025-11-05T00:31:24.466170618Z	> vite build && esbuild server/index.ts --platform=node --packages=external --bundle --format=esm --outdir=dist
+2025-11-05T00:31:24.466412846Z	
+2025-11-05T00:31:24.734804798Z	[36mvite v5.4.20 [32mbuilding for production...[36m[39m
+2025-11-05T00:31:24.78603412Z	transforming...
+2025-11-05T00:31:25.074520296Z	Browserslist: browsers data (caniuse-lite) is 13 months old. Please run:
+2025-11-05T00:31:25.074875911Z	  npx update-browserslist-db@latest
+2025-11-05T00:31:25.07519742Z	  Why you should do it regularly: https://github.com/browserslist/update-db#readme
+2025-11-05T00:31:25.724186125Z	
+2025-11-05T00:31:25.724534463Z	A PostCSS plugin did not pass the `from` option to `postcss.parse`. This may cause imported assets to be incorrectly transformed. If you've recently added a PostCSS plugin that raised this warning, please contact the package author to fix the issue.
+2025-11-05T00:31:27.76564882Z	[32m✓[39m 1673 modules transformed.
+2025-11-05T00:31:27.918904479Z	rendering chunks...
+2025-11-05T00:31:27.93062256Z	computing gzip size...
+2025-11-05T00:31:27.941435776Z	[2m../dist/public/[22m[32mindex.html                                                   [39m[1m[2m    2.86 kB[22m[1m[22m[2m │ gzip:  1.06 kB[22m
+2025-11-05T00:31:27.941723217Z	[2m../dist/public/[22m[2massets/[22m[32mADFYPRO_horizontal_logo_181b92e8-DiKR5r1Z.png         [39m[1m[2m  275.63 kB[22m[1m[22m
+2025-11-05T00:31:27.94197459Z	[2m../dist/public/[22m[2massets/[22m[32mDigital_marketing_technology_3413e7e3-C_OsP9iA.png    [39m[1m[2m1,155.43 kB[22m[1m[22m
+2025-11-05T00:31:27.942277387Z	[2m../dist/public/[22m[2massets/[22m[32mBusiness_partnership_handshake_8fc9224c-i7M7fCSd.png  [39m[1m[2m1,270.31 kB[22m[1m[22m
+2025-11-05T00:31:27.942477882Z	[2m../dist/public/[22m[2massets/[22m[32mStrategy_planning_session_8a0d4faf-CdzoFJbQ.png       [39m[1m[2m1,582.57 kB[22m[1m[22m
+2025-11-05T00:31:27.942712991Z	[2m../dist/public/[22m[2massets/[22m[32mHero_office_collaboration_dcd783c8-Ckg47KNM.png       [39m[1m[2m1,720.71 kB[22m[1m[22m
+2025-11-05T00:31:27.943535703Z	[2m../dist/public/[22m[2massets/[22m[35mindex-Cx_SLikl.css                                    [39m[1m[2m   76.58 kB[22m[1m[22m[2m │ gzip: 12.51 kB[22m
+2025-11-05T00:31:27.943552326Z	[2m../dist/public/[22m[2massets/[22m[36mindex-xLWkXvFQ.js                                     [39m[1m[2m  278.30 kB[22m[1m[22m[2m │ gzip: 89.45 kB[22m
+2025-11-05T00:31:27.943890678Z	[32m✓ built in 3.18s[39m
+2025-11-05T00:31:28.041827848Z	
+2025-11-05T00:31:28.041937612Z	  dist/index.js  7.5kb
+2025-11-05T00:31:28.042520665Z	
+2025-11-05T00:31:28.042536641Z	⚡ Done in 9ms
+2025-11-05T00:31:28.061757877Z	Finished
+2025-11-05T00:31:28.996148404Z	Checking for configuration in a Wrangler configuration file (BETA)
+2025-11-05T00:31:29.013234006Z	
+2025-11-05T00:31:30.102237838Z	No wrangler.toml file found. Continuing.
+2025-11-05T00:31:30.103225324Z	Note: No functions dir at /functions found. Skipping.
+2025-11-05T00:31:30.10329684Z	Validating asset output directory
+2025-11-05T00:31:35.420752403Z	Uploading... (10/11)
+2025-11-05T00:31:36.220649347Z	
+2025-11-05T00:31:36.648412343Z	✨ Upload complete!
+2025-11-05T00:31:36.220649347Z	
+2025-11-05T00:31:36.648412343Z	✨ Upload complete!
+2025-11-05T00:31:41.245872Z	Success: Assets published!
+2025-11-05T00:31:43.392383Z	Success: Your site was deployed!

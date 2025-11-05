@@ -133,16 +133,21 @@ El sitio está **100% funcional** como página estática y listo para ser desple
 - ✅ **Fix Error 404**: Añadido archivo `_redirects` para Cloudflare Pages
 
 ### Solución al Error 404 en Cloudflare Pages
-El archivo `client/public/_redirects` contiene la configuración necesaria para que React funcione correctamente en Cloudflare Pages:
+
+**Problema identificado**: El Build Output Directory en Cloudflare Pages está configurado incorrectamente.
+
+- ❌ **Configuración incorrecta**: `dist`
+- ✅ **Configuración correcta**: `dist/public`
+
+**Solución rápida**:
+1. Ve a Cloudflare Dashboard → Workers & Pages → Tu proyecto
+2. Click en "Settings" → "Build settings"
+3. Cambia "Build output directory" de `dist` a `dist/public`
+4. Guarda y redesplega
+
+Además, el archivo `client/public/_redirects` está incluido para el routing de React:
 ```
 /* /index.html 200
 ```
 
-Este archivo se copia automáticamente a `dist/public/_redirects` durante el build.
-
-### Próximos Pasos
-1. Subir cambios a GitHub (`git add . && git commit && git push`)
-2. Cloudflare Pages hará rebuild automático
-3. El error 404 desaparecerá y el sitio funcionará perfectamente
-
-Ver **SOLUCION_ERROR_404.md** para instrucciones detalladas paso a paso.
+Ver **FIX_CLOUDFLARE_CONFIG.md** para instrucciones detalladas paso a paso con capturas.
